@@ -20,7 +20,12 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4xx+)q$@66z0k5m0$n#t$+t(ufa7b8e_mhia+f*uzasj7ml&&i'
+
+key_path = Path('/home/bst/django_app/portfolio_app_v2/key')
+
+with open(key_path) as f:
+    key = f.read()
+SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'marketdata',
+    'home',
 ]
 
 MIDDLEWARE = [
