@@ -9,9 +9,9 @@ class Stock(models.Model):
     rating = models.CharField(max_length=4, default='NONE')
     index = models.CharField(max_length=30)
     summary = models.TextField(default='additional info about company')
-
-    def __str__(self):
-        return self.name
+    #
+    # def __str__(self):
+    #     return self.id, self.name
 
 
 class Index(models.Model):
